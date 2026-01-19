@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby ">= 2.8.0"
+ruby ">= 3.2.0"
 
 gem "rake", require: false
 gem "irb"
@@ -23,14 +23,10 @@ gem "newrelic_rpm", require: false
 # openssl 3.6.0 is causing issues in the version of the openssl gem that ships with Ruby. https://github.com/ruby/openssl/issues/949
 gem "openssl", require: false
 
-# Silence Ruby deprecation warning by including drb here. https://github.com/Mon-Ouie/pry-remote/pull/88
-gem "drb"
-
 group :development do
   gem "sinatra-contrib", require: "sinatra/reloader"
   gem "powder"
   # gem "binding_of_caller"
   # gem "better_errors"
-  gem "pry-remote"
   gem "github-release-party"
 end
