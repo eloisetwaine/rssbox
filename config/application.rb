@@ -39,6 +39,9 @@ configure :development do
     use BetterErrors::Middleware
     BetterErrors.application_root = File.expand_path("..", __dir__)
   end
+
+  # Disable HostAuthorization middleware in development:
+  set :host_authorization, allow_if: ->(env) { true }
 end
 
 Dir["#{app_path}/config/initializers/*.rb"].sort.each { |f| require f }
